@@ -2,12 +2,14 @@ import React from 'react';
 
 import GlobalStyle from './styles/global';
 
+import Sidebar from './components/Sidebar';
+
 function App() {
   return (
-    <div>
+    <>
       <GlobalStyle />
-      <h1>Spotify</h1>
-    </div>
+      <Sidebar />
+    </>
   );
 }
 
