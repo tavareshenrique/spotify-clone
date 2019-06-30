@@ -9,7 +9,7 @@ const browse = () => (
     <Title>Navegar</Title>
 
     <List>
-      <Playlist href="">
+      <Playlist to="/playlists/1">
         <img
           src="https://images.genius.com/97250b161e74770ace9ec645c457492f.1000x1000x1.jpg"
           alt="San Holo"
@@ -18,7 +18,7 @@ const browse = () => (
         <p>I've been feeling lost lately</p>
       </Playlist>
 
-      <Playlist href="">
+      <Playlist to="/playlists/1">
         <img
           src="https://images.genius.com/97250b161e74770ace9ec645c457492f.1000x1000x1.jpg"
           alt="San Holo"
@@ -27,7 +27,7 @@ const browse = () => (
         <p>I've been feeling lost lately</p>
       </Playlist>
 
-      <Playlist href="">
+      <Playlist to="/playlists/1">
         <img
           src="https://images.genius.com/97250b161e74770ace9ec645c457492f.1000x1000x1.jpg"
           alt="San Holo"
@@ -36,7 +36,7 @@ const browse = () => (
         <p>I've been feeling lost lately</p>
       </Playlist>
 
-      <Playlist href="">
+      <Playlist to="/playlists/1">
         <img
           src="https://images.genius.com/97250b161e74770ace9ec645c457492f.1000x1000x1.jpg"
           alt="San Holo"
