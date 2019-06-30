@@ -23,13 +23,15 @@ const playlist = () => (
 
     <SongList cellPadding={0} cellSpacing={0}>
       <thead>
-        <th />
-        <th>Título</th>
-        <th>Artista</th>
-        <th>Álbum</th>
-        <th>
-          <img src={ClockIcon} alt="Duração" />
-        </th>
+        <tr>
+          <th />
+          <th>Título</th>
+          <th>Artista</th>
+          <th>Álbum</th>
+          <th>
+            <img src={ClockIcon} alt="Duração" />
+          </th>
+        </tr>
       </thead>
       <tbody>
         <tr>
