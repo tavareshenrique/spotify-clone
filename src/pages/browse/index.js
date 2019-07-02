@@ -1,51 +1,60 @@
-import React from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { Creators as PlaylistsActions } from '../../store/ducks/playlists';
 
 import {
   Container, Title, List, Playlist,
 } from './styles';
 
-const browse = () => (
-  <Container>
-    <Title>Navegar</Title>
+class Browse extends Component {
+  static propTypes = {
+    getPlaylistsRequest: PropTypes.func.isRequired,
+    playlists: PropTypes.shape({
+      data: PropTypes.arrayOf({
+        id: PropTypes.number,
+        title: PropTypes.string,
+        thumbnail: PropTypes.string,
+        description: PropTypes.string,
+      }),
+    }).isRequired,
+  };
 
-    <List>
-      <Playlist to="/playlists/1">
-        <img
-          src="https://images.genius.com/97250b161e74770ace9ec645c457492f.1000x1000x1.jpg"
-          alt="San Holo"
-        />
-        <strong>This is: San Holo</strong>
-        <p>I've been feeling lost lately</p>
-      </Playlist>
+  componentDidMount() {
+    const { getPlaylistsRequest } = this.props;
 
-      <Playlist to="/playlists/1">
-        <img
-          src="https://images.genius.com/97250b161e74770ace9ec645c457492f.1000x1000x1.jpg"
-          alt="San Holo"
-        />
-        <strong>This is: San Holo</strong>
-        <p>I've been feeling lost lately</p>
-      </Playlist>
+    getPlaylistsRequest();
+  }
 
-      <Playlist to="/playlists/1">
-        <img
-          src="https://images.genius.com/97250b161e74770ace9ec645c457492f.1000x1000x1.jpg"
-          alt="San Holo"
-        />
-        <strong>This is: San Holo</strong>
-        <p>I've been feeling lost lately</p>
-      </Playlist>
+  render() {
+    const { playlists } = this.props;
+    return (
+      <Container>
+        <Title>Navegar</Title>
 
-      <Playlist to="/playlists/1">
-        <img
-          src="https://images.genius.com/97250b161e74770ace9ec645c457492f.1000x1000x1.jpg"
-          alt="San Holo"
-        />
-        <strong>This is: San Holo</strong>
-        <p>I've been feeling lost lately</p>
-      </Playlist>
-    </List>
-  </Container>
-);
+        <List>
+          {playlists.data.map(playlist => (
+            <Playlist key={playlist.id} to={`/playlists/${playlist.id}`}>
+              <img src={playlist.thumbnail} alt={playlist.title} />
+              <strong>{playlist.title}</strong>
+              <p>{playlist.description}</p>
+            </Playlist>
+          ))}
+        </List>
+      </Container>
+    );
+  }
+}
 
-export default browse;
+const mapStateToProps = state => ({
+  playlists: state.playlists,
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators(PlaylistsActions, dispatch);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Browse);
