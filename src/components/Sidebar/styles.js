@@ -1,41 +1,39 @@
 import styled from 'styled-components';
+// import { Spinner } from '../Loading/styles';
 
 export const Container = styled.aside`
   height: 100%;
-  width: 200px;
+  min-width: 200px;
   background: #121212;
   color: #b3b3b3;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
+  overflow-y: auto;
   > div {
     padding: 25px;
   }
 `;
 
 export const Nav = styled.ul`
-  list-style: none;
   margin-top: 25px;
-
+  list-style: none;
   &:first-child {
     margin: 0;
   }
-
   li {
+    display: flex;
+    align-items: center;
     a {
       color: inherit;
       text-decoration: none;
       font-size: 13px;
-      line-height: 32px;
       font-weight: ${props => (props.main ? 'bold' : 'normal')};
-
+      line-height: 32px;
       &:hover {
         color: #fff;
       }
     }
-
     span {
       font-size: 11px;
       text-transform: uppercase;
@@ -55,11 +53,9 @@ export const NewPlaylist = styled.button`
   display: flex;
   align-items: center;
   padding: 15px 25px;
-
   &:hover {
     color: #fff;
   }
-
   img {
     margin-right: 10px;
   }

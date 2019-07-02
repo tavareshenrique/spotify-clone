@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.19.0",
+    "prop-types": "^15.7.2",
     "rc-slider": "^8.6.13",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -13,9 +15,9 @@
     "reactotron-redux": "^3.1.1",
     "reactotron-redux-saga": "^4.2.2",
     "redux": "^4.0.1",
+    "redux-devtools-extension": "^2.13.8",
     "redux-saga": "^1.0.4",
-    "styled-components": "^4.3.2",
-    "redux-devtools-extension": "^2.13.8"
+    "styled-components": "^4.3.2"
   },
   "scripts": {
     "start": "react-scripts start",
