@@ -8,7 +8,7 @@ import { Creators as PlaylistsActions } from '../../store/ducks/playlists';
 
 import { Container, NewPlaylist, Nav } from './styles';
 
-import Loading from '../../components/Loading'
+import Loading from '../Loading';
 
 import AddPlaylistIcon from '../../assets/images/add_playlist.svg';
 
@@ -84,7 +84,7 @@ class Sidebar extends Component {
             </li>
             {playlists.data.map(playlist => (
               <li key={playlist.id}>
-                <Link to={`playlists/${playlist.id}`}>{playlist.title}</Link>
+                <Link to={`/playlists/${playlist.id}`}>{playlist.title}</Link>
               </li>
             ))}
           </Nav>
