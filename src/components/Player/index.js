@@ -22,15 +22,16 @@ const Player = ({ player }) => (
     {!!player.currentSong && <Sound url={player.currentSong.file} playStatus={player.status} />}
 
     <Current>
-      <img
-        src="https://images.genius.com/97250b161e74770ace9ec645c457492f.1000x1000x1.jpg"
-        alt="Lost Lately"
-      />
+      {!!player.currentSong && (
+        <>
+          <img src={player.currentSong.thumbnail} alt={player.currentSong.title} />
 
-      <div>
-        <span>Lost Lately</span>
-        <small>San Holo</small>
-      </div>
+          <div>
+            <span>{player.currentSong.title}</span>
+            <small>{player.currentSong.author}></small>
+          </div>
+        </>
+      )}
     </Current>
 
     <Progress>
@@ -83,6 +84,9 @@ const Player = ({ player }) => (
 Player.propTypes = {
   player: PropTypes.shape({
     currentSong: PropTypes.shape({
+      thumbnail: PropTypes.string,
+      title: PropTypes.string,
+      author: PropTypes.string,
       file: PropTypes.string,
     }),
     status: PropTypes.string,
