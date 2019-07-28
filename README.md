@@ -1,7 +1,7 @@
 
 # Spotify Clone
 
-Clone do Spotify desenvolvido em ReactJS feito durante o GoStack Bootcamo da Rocketseat.
+Clone do Spotify desenvolvido em ReactJS desenvolvido durante o GoStack Bootcamp da Rocketseat.
 
 ## Instalando e Executando
 
